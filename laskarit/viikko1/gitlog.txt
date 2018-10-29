@@ -1,0 +1,115 @@
+commit 9c79a7c1cc5a05d781962bbbdd97cae98875c9e6
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:38:01 2018 +0200
+
+    nyt on file22
+
+ tiedostoja/file22 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0b5bdcdba69771f2d5a3fe44b43e6ecac1518ffe
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:37:17 2018 +0200
+
+    nyt on file22
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 315531c1e37312728866fe0b03f9817b5088790a
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:33:24 2018 +0200
+
+    kolme uutta tiedostoa
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit aec229c008585528331f76f3bef6f4018aad4537
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:23:51 2018 +0200
+
+    lisää muutoksia
+
+ eka.txt      |  9 +--------
+ kolmas.txt   |  6 +++++-
+ tiedosto.txt | 14 --------------
+ 3 files changed, 6 insertions(+), 23 deletions(-)
+
+commit 270c1619a6f3620b7a488b8ade8ee67547e7156c
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:20:50 2018 +0200
+
+    vaihoin nimen ekaks
+
+ eka.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 04c5513263bb9cbbc51808882877bbf11b21c416
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:19:25 2018 +0200
+
+    poistin tokan
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit dbca5cba1abf79f179288dc9dc6b43c23b20e604
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:16:12 2018 +0200
+
+    pikkuisia muutoksia
+
+ tiedosto.txt | 178 +----------------------------------------------------------
+ 1 file changed, 3 insertions(+), 175 deletions(-)
+
+commit e56159c7dfee8a25f94a77f86bd72517b4dbd997
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 17:12:36 2018 +0200
+
+    lorem ipsum
+
+ tiedosto.txt | 185 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 185 insertions(+)
+
+commit 757b7b95637aff1053bac933b8798b4411c220fd
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 16:47:21 2018 +0200
+
+    pari muutosta
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit e8f2a48dd664b64c30774d5f1defd55486bcada9
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 16:44:55 2018 +0200
+
+    luotiin kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4e197bf3dc2849f395b52bccbb459222e3b6f967
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 16:33:09 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 22c2a285640a6c9e0309b2ba94cc0bde7f748c38
+Author: Kevin Hann <Kevin.Hann@helsinki.fi>
+Date:   Mon Oct 29 16:29:28 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
