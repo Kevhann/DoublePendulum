@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-hassunhauskaa **leikkimistä** ja _koodaamista_ xD
+hassunhauskaa **leikkimistä** ja _koodaamista_ _xD_
 
 ## viikko 1 tehtävät
 [gitlog.txt.](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko1/gitlog.txt)  
