@@ -6,6 +6,8 @@ hassunhauskaa **komentorivin** _opiskelua_
 [gitlog.txt.](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko1/gitlog.txt)  
 [komentorivi.txt](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko1/komentorivi.txt)
 
+## viikko 2 tehtävät
+[Testikattavuus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko2/LaskariViikko2TestitKunnossa.png)
 
 ## Työaikakirjanpito
 [Lue täältä](https://github.com/Kevhann/ot-harjoitusyto/blob/master/tyoaikakirjanpito/ty%C3%B6aikakirjanpito.txt)
