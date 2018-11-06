@@ -10,4 +10,10 @@ hassunhauskaa **komentorivin** _opiskelua_
 [Testikattavuus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko2/LaskariViikko2TestitKunnossa.png)
 
 ## Työaikakirjanpito
-[Lue täältä](https://github.com/Kevhann/ot-harjoitusyto/blob/master/tyoaikakirjanpito/ty%C3%B6aikakirjanpito.txt)
+
+### 1.11
+  * Viikko 1 laskarit
+    * 3 tuntia
+### 6.11
+  * Viikko 2 laskarit + projektin suunnittelua
+    * 3.5 tuntia
