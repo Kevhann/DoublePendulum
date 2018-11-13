@@ -17,17 +17,20 @@ public class Ball {
 /**
  * Create a ball which tracks it's x and y location
  * @param mass the mass of the ball
- * @param radius the radius of the ball
  */
-    public Ball(double mass) {
+    public Ball(double mass, int x, int y) {
         this.mass = mass;
         this.radius = (int) mass * 20;
-        this.xlocation = 50;
-        this.ylocation = 50;
-    }
+        this.xlocation = x;
+        this.ylocation = -y;
+       }
 
     public double getMass() {
         return mass;
+    }
+    public void setXY(int x, int y){
+        this.xlocation = x;
+        this.ylocation = -y;
     }
 
     public int getXlocation() {

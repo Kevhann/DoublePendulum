@@ -10,9 +10,27 @@ package doublependulum.logic;
  * @author kevhann
  */
 public class Line {
+    public Ball ball;
     public int startx;
     public int starty;
-    public int endx;
-    public int endy;
-    public int width;
+    public int length;
+    
+
+    public Line(int startx, int starty, int length) {
+        this.startx = startx;
+        this.starty = starty;
+        this.length = length;
+        
+    }
+    public Line(Ball ball, int length){
+        this.startx = ball.getXlocation();
+        this.starty = ball.getYlocation();
+        this.length = length;
+    }
+
+    public int getLength() {
+        return length;
+    }
+    
+    
 }
