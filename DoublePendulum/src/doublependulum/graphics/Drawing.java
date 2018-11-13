@@ -32,6 +32,8 @@ public void start(Stage stage){
         
         final int leveys = 800;
         final int korkeus = 800;
+        final int xoffset = 400;
+        final int yoffset = 50;
 
         stage.setTitle("DoublePendulum");
 
@@ -46,41 +48,38 @@ public void start(Stage stage){
         GraphicsContext drawer = drawingTable.getGraphicsContext2D();
         drawer.setFill(javafx.scene.paint.Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
-        drawer.translate(400, 100);
+        drawer.translate(xoffset, yoffset);
         
         new AnimationTimer() {
             private long sleepNanoseconds = 6 * 1000000;
             private long prevTime = 0;
-            Line upperLine = new Line();
-            Ball lowerBall = new Ball(20,150,-100);
-            Ball upperBall = new Ball(20,150,-50);
+            Ball upperBall = new Ball(20,30,40);  // 100 50
+            Ball lowerBall = new Ball(20,40,30);  // 400, 50
             double g = 0.4;
             Logic logic = new Logic(upperBall,lowerBall,g);
             
-            Circle upperCircle = new Circle();
-            Line lowerLine = new Line();
-            Circle lowerCircle = new Circle();
 
             public void handle(long currentNanoTime) {
-                // päivitetään animaatiota noin 200 millisekunnin välein
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
                     return;
                 }
                 
                 drawer.setFill(javafx.scene.paint.Color.WHITE);
-                drawer.clearRect(-400, -100, leveys, korkeus);
+                drawer.clearRect(-xoffset, -yoffset, leveys, korkeus);
                 drawer.setFill(javafx.scene.paint.Color.BLACK);
                 
                 
                 
                 drawer.fillOval(0, 0, 5, 5);
-                drawer.moveTo(100, 100);
-                drawer.lineTo(150, 150);
                 drawer.fillOval(upperBall.getXlocation() , upperBall.getYlocation(), 20, 20);
-                drawer.lineTo(0, 0);
-                drawer.setFill(javafx.scene.paint.Color.BLUE);
+                
+                
+                drawer.setFill(javafx.scene.paint.Color.RED);
+                drawer.fillOval(50, 400, 10, 10);
                 
                 drawer.fillOval(lowerBall.getXlocation(),lowerBall.getYlocation() , 20, 20);
+                
+                
                 logic.calculateAcceleration();
                 
                 

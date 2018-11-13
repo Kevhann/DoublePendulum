@@ -30,8 +30,8 @@ public class Logic {
         this.lowerBall = lowerBall;
         this.upperBall = upperBall;
         this.g = g;
-        this.upperLength = Math.sqrt((this.upperBall.getXlocation()) * (this.upperBall.getXlocation()) + (this.upperBall.getYlocation()) * (this.upperBall.getYlocation()));
-        this.lowerLength = Math.sqrt(((this.lowerBall.getXlocation() - this.upperBall.getXlocation()) * (this.lowerBall.getXlocation() - this.upperBall.getXlocation())) + (lowerBall.getYlocation() - upperBall.getYlocation()) * (lowerBall.getYlocation() - upperBall.getYlocation()));
+        this.upperLength = Math.sqrt((this.upperBall.getXlocation() * this.upperBall.getXlocation()) + (this.upperBall.getYlocation() * this.upperBall.getYlocation()));
+        this.lowerLength = Math.sqrt(((this.lowerBall.getXlocation() - this.upperBall.getXlocation()) * (this.lowerBall.getXlocation() - this.upperBall.getXlocation())) + ((this.lowerBall.getYlocation() - this.upperBall.getYlocation()) * (this.lowerBall.getYlocation() - this.upperBall.getYlocation())));
         this.upperAngle = Math.asin(this.upperBall.getXlocation() / this.upperLength);
         this.upperAngleVel = 0;
         this.upperAngleAcc = 0;
@@ -44,10 +44,10 @@ public class Logic {
     
     public void setBalls(double angle1, double angle2){
         int x1 =(int) Math.round(this.upperLength * Math.sin(angle1));
-        int y1 = (int) -Math.round(this.upperLength * Math.cos(angle1));
+        int y1 = (int) Math.round(this.upperLength * Math.cos(angle1));
         
         int x2 = (int) (x1 + Math.round(this.lowerLength * Math.sin(angle2)));
-        int y2 = (int)  (y1 - (Math.round(this.lowerLength * Math.cos(angle2))));
+        int y2 = (int)  (y1 + (Math.round(this.lowerLength * Math.cos(angle2))));
         
         this.upperBall.setXY(x1, y1);
         this.lowerBall.setXY(x2, y2);
@@ -75,7 +75,11 @@ public class Logic {
         
         this.lowerAngleVel += this.lowerAngleAcc;
         this.lowerAngle += this.lowerAngleVel;
+        System.out.println("upper: " + this.upperLength + " w: " + this.upperBall.getXlocation() + " h: " + this.upperBall.getYlocation());
+        System.out.println("lower: " + this.lowerLength);
         
-        setBalls(this.upperAngle, this.lowerAngle);  
-    }    
+        //setBalls(this.upperAngle, this.lowerAngle);  
+        
+    }
+    
 }

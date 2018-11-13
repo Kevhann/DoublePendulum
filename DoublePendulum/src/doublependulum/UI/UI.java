@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package doublependulum.logic;
+package doublependulum.UI;
 
 /**
  *
  * @author kevhann
  */
-public class LowerBall {
+public class UI {
     
 }
