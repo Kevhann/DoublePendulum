@@ -11,3 +11,4 @@ hassunhauskaa **komentorivin** _opiskelua_ yeet
 
 ## Työaikakirjanpito
 
+[Katso täältä](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
