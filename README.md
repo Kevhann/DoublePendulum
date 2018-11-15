@@ -11,7 +11,9 @@ hassunhauskaa **komentorivin** _opiskelua_ yeet
 
 ## viikko 3 tehtävät
 [Monopolin luokkakaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/LaajempiMonopoli.png)
+
 [Moottorin sekvenssikaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/sekvenssikaavio_kone.png)
+
 [HSL sekvenssikaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/sekvenssikaavio_HSL.png)
 
 ## Työaikakirjanpito
