@@ -1,0 +1,3 @@
+%2F%2F Cool Class Diagram,[Pelaaja|-nimi:string; -pelinappula:string;-ruudut:ArrayList(Ruutu);-rahaa:int| void heitanoppaa();void liiku();void osta(Ruutu);void rakenna(Ruutu);void maksaUlosVankilasta()],[Ruutu|-hinta:int;-vuokra:int]<40->[Pelilauta],[Ruutu]<*-2..8>[Pelaaja],[Katu|-talot:int;-rakennushinta:int|void rakenna()]-<>[Ruutu], [Laitos]-<> [Ruutu],[Asema]-<>[Ruutu],[Vankila|-lusittu:int]<->[Pelilauta],[Aloitus]<->[Pelilauta],[Sattumamaa|-sattuma:ArrayList(Tapahtuma);-yhteismaa:ArrayList(Tapahtuma)]<->[Pelilauta]
+
+Ruutu on interface
