@@ -51,11 +51,11 @@ public void start(Stage stage){
         drawer.translate(xoffset, yoffset);
         
         new AnimationTimer() {
-            private long sleepNanoseconds = 6 * 1000000;
+            private long sleepNanoseconds = 600 * 1000000;
             private long prevTime = 0;
-            Ball upperBall = new Ball(20,30,40);  // 100 50
-            Ball lowerBall = new Ball(20,40,30);  // 400, 50
-            double g = 0.4;
+            Ball upperBall = new Ball(20,160,20);  
+            Ball lowerBall = new Ball(20,-180,30);  
+            double g = 0.7;
             Logic logic = new Logic(upperBall,lowerBall,g);
             
 
@@ -72,11 +72,6 @@ public void start(Stage stage){
                 
                 drawer.fillOval(0, 0, 5, 5);
                 drawer.fillOval(upperBall.getXlocation() , upperBall.getYlocation(), 20, 20);
-                
-                
-                drawer.setFill(javafx.scene.paint.Color.RED);
-                drawer.fillOval(50, 400, 10, 10);
-                
                 drawer.fillOval(lowerBall.getXlocation(),lowerBall.getYlocation() , 20, 20);
                 
                 

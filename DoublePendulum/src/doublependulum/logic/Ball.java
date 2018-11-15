@@ -36,6 +36,6 @@ public class Ball {
     }
 
     public int getYlocation() {
-        return ylocation;
+        return -ylocation;
     }
 }

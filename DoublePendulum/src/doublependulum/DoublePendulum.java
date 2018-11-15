@@ -13,7 +13,7 @@ import doublependulum.logic.Logic;
  *
  * @author kevhann
  */
-public class DoublePendulum extends Drawing{
+public class DoublePendulum{
 
     /**
      * @param args the command line arguments
@@ -23,6 +23,7 @@ public class DoublePendulum extends Drawing{
 //        Ball upperBall = new Ball(20,150,-50);
 //        double g = 0.4;
 //        Logic logic = new Logic(upperBall,lowerBall,g);
+        Drawing dr = new Drawing();
         
     }
     
