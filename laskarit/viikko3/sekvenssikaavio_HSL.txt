@@ -1,0 +1,44 @@
+title HSL
+Main->laitehallinto:new HKLLaitehallinto()
+
+Main->rautatietori:new Lataajalaite()
+
+Main->ratikka6:new Lataajalaite()
+
+Main->bussi244:new Lataajalaite()
+
+Main->laitehallinto:lisaaLataaja(rautatietori)
+
+Main->laitehallinto:lisaaLukija(ratikka6)
+
+Main->laitehallinto:lisaaLukija(bussi244)
+
+Main->lippuLuukku:new Kioski()
+
+Main->lippuLuukku:ostaMatkakortti("Arto")
+
+lippuLuukku->artonKortti:new Matkakortti("Arto")
+
+lippuLuukku-->Main:artonKortti
+
+Main->rautatietori:lataaArvoa(artonKortti,3)
+
+rautatietori->artonKortti:kasvataArvoa(3)
+
+Main->ratikka6:ostaLippu(artonKortti, 0)
+
+ratikka6->artonKortti:getArvo()
+
+artonKortti-->ratikka6:3
+
+ratikka6->artonKortti:vahennaArvoa(1.5)
+
+ratikka6-->Main:True
+
+Main->bussi244:ostaLippu(artonKortti, 2)
+
+ratikka6->artonKortti:getArvo()
+
+artonKortti-->ratikka6:1.5
+
+ratikka6-->Main: False

@@ -1,0 +1,28 @@
+title Moottori/Tankki
+
+
+Main->kone:new Machine()
+
+kone->tankki:new FuelTank()
+
+kone->tankki:fill(40)
+
+kone->moottori:new Engine(FuelTank)
+
+Main->kone: drive()
+
+kone->moottori:start()
+
+moottori->tankki:consume(5)
+
+kone->moottori:isRunning()
+
+moottori->tankki:contentsLeft()
+
+tankki-->moottori:35
+
+moottori-->kone:true
+
+kone->moottori:useEnergy()
+
+moottori->tankki:consume(10)
