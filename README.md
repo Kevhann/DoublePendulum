@@ -9,6 +9,9 @@ hassunhauskaa **komentorivin** _opiskelua_ yeet
 ## viikko 2 tehtävät
 [Testikattavuus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko2/LaskariViikko2TestitKunnossa.png)
 
+## viikko 3 tehtävät
+[Monopolin luokkakaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/LaajempiMonopoli.png)
+
 ## Työaikakirjanpito
 
 [Katso täältä](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
