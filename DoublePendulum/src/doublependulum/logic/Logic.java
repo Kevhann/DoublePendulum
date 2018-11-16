@@ -32,7 +32,7 @@ public class Logic {
         this.g = g;
         this.upperLength = Math.sqrt((this.upperBall.getXlocation() * this.upperBall.getXlocation()) + (this.upperBall.getYlocation() * this.upperBall.getYlocation()));
         this.lowerLength = Math.sqrt(((this.lowerBall.getXlocation() - this.upperBall.getXlocation()) * (this.lowerBall.getXlocation() - this.upperBall.getXlocation())) + ((this.lowerBall.getYlocation() - this.upperBall.getYlocation()) * (this.lowerBall.getYlocation() - this.upperBall.getYlocation())));
-        this.upperAngle = Math.acos(-this.upperBall.getYlocation() / this.upperLength);
+        this.upperAngle = Math.acos(this.upperBall.getYlocation() / this.upperLength);
         this.upperAngleVel = 0;
         this.upperAngleAcc = 0;
         this.lowerAngleAcc = 0;
@@ -77,8 +77,10 @@ public class Logic {
         
         this.lowerAngleVel += this.lowerAngleAcc;
         this.lowerAngle += this.lowerAngleVel; 
-        System.out.println("lowera: " + lowerAngle);
-        System.out.println("uppera: " + upperAngle);
+        
+        System.out.println("upper: A: " + upperAngle + " X: " + upperBall.getXlocation() + " Y: " + upperBall.getYlocation());
+        System.out.println("lower: A: " + lowerAngle + " X: " + lowerBall.getXlocation() + " Y: " + lowerBall.getYlocation());
+        
         System.out.println(Math.round(this.upperLength * Math.cos(upperAngle)));
         System.out.println(this.upperLength * Math.cos(upperAngle));
         setBalls(this.upperAngle, this.lowerAngle);

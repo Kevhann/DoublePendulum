@@ -33,7 +33,7 @@ public void start(Stage stage){
         final int leveys = 800;
         final int korkeus = 800;
         final int xoffset = 400;
-        final int yoffset = 50;
+        final int yoffset = 80;
 
         stage.setTitle("DoublePendulum");
 
@@ -51,10 +51,10 @@ public void start(Stage stage){
         drawer.translate(xoffset, yoffset);
         
         new AnimationTimer() {
-            private long sleepNanoseconds = 600 * 1000000;
+            private long sleepNanoseconds = 1000 * 1000000;
             private long prevTime = 0;
-            Ball upperBall = new Ball(20,160,20);  
-            Ball lowerBall = new Ball(20,-180,30);  
+            Ball upperBall = new Ball(20,-100,100);  
+            Ball lowerBall = new Ball(20,100,-100);  
             double g = 0.7;
             Logic logic = new Logic(upperBall,lowerBall,g);
             
