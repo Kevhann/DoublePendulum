@@ -51,7 +51,7 @@ public void start(Stage stage){
         drawer.translate(xoffset, yoffset);
         
         new AnimationTimer() {
-            private long sleepNanoseconds = 1000 * 1000000;
+            private long sleepNanoseconds = 10 * 1000000;
             private long prevTime = 0;
             Ball upperBall = new Ball(20,-100,100);  
             Ball lowerBall = new Ball(20,100,-100);  
