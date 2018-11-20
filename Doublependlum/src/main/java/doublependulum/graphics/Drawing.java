@@ -83,7 +83,7 @@ public void start(Stage stage){
         }.start();
         stage.show();
     }
-    public static void main(String[] args){
+    public void compile(String[] args){
         launch(args);
     }
 }

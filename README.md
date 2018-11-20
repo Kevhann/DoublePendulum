@@ -1,19 +1,15 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Doublependulum
+Tarkoituksena mallintaa kahta toisissaan kiinni olevaa heiluria. 
+Kaksoisheiluri on esimerkki ns. kaaottisesta systeemistä, jossa pienet
+muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 
-hassunhauskaa **komentorivin** _opiskelua_ yeet
 
-## viikko 1 tehtävät
-[gitlog.txt.](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko1/gitlog.txt)   
-[komentorivi.txt](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko1/komentorivi.txt)
+## Dokumentaatio
 
-## viikko 2 tehtävät
-[Testikattavuus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko2/LaskariViikko2TestitKunnossa.png)
+[Työaikakirjanpito](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
 
-## viikko 3 tehtävät
-[Monopolin luokkakaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/LaajempiMonopoli.png)   
-[Moottorin sekvenssikaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/sekvenssikaavio_kone.png)   
-[HSL sekvenssikaavio](https://github.com/Kevhann/ot-harjoitusyto/blob/master/laskarit/viikko3/sekvenssikaavio_HSL.png)    
+## Komentorivitoiminnot
 
-## Työaikakirjanpito
+Testaus suoritetaan komennolla: mvn test
 
-[Katso täältä](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
+Testikattavuusraportti: 
