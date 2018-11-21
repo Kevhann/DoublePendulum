@@ -12,39 +12,40 @@ package doublependulum.logic;
  * @author kevhann
  */
 public class Logic {
-    private Ball lowerBall;
-    private Ball upperBall;
-    private double g;
-    private double upperLength;
-    private double lowerLength;
+    private final Ball lowerBall;
+    private final Ball upperBall;
+    private final double g;
+    private final double upperLength;
+    private final double lowerLength;
     private double upperAngle;
     private double upperAngleVel;
     private double upperAngleAcc;
     private double lowerAngleAcc;
     private double lowerAngleVel;
     private double lowerAngle;
-    private double lowerMass;
-    private double upperMass;
+    private final double lowerMass;
+    private final double upperMass;
 
     public Logic(Ball upperBall, Ball lowerBall, double g) {
         this.lowerBall = lowerBall;
         this.upperBall = upperBall;
         this.g = g;
-        this.upperLength = Math.sqrt((this.upperBall.getXlocation() * this.upperBall.getXlocation()) + (this.upperBall.getYlocation() * this.upperBall.getYlocation()));
-        this.lowerLength = Math.sqrt(((this.lowerBall.getXlocation() - this.upperBall.getXlocation()) * (this.lowerBall.getXlocation() - this.upperBall.getXlocation())) + ((this.lowerBall.getYlocation() - this.upperBall.getYlocation()) * (this.lowerBall.getYlocation() - this.upperBall.getYlocation())));
-        this.upperAngle = Math.acos(this.upperBall.getYlocation() / this.upperLength);
+        this.upperAngle = upperBall.calculateStartingAngle();
         this.upperAngleVel = 0;
         this.upperAngleAcc = 0;
         this.lowerAngleAcc = 0;
         this.lowerAngleVel = 0;
-        this.lowerAngle = Math.asin(((this.lowerBall.getXlocation() - this.upperBall.getXlocation()) / this.lowerLength));
+        this.lowerAngle = lowerBall.calculateStartingAngle(upperBall);
         this.lowerMass = lowerBall.getMass();
         this.upperMass = upperBall.getMass();
-        
+        this.upperLength = upperBall.getLength();
+        this.lowerLength = lowerBall.getLength();
     }
     
     public void setBalls(double angle1, double angle2){
-        int x1 =(int) Math.round(this.upperLength * Math.sin(angle1));
+        System.out.println(-Math.round(this.upperLength * Math.cos(angle1)));
+        
+        int x1 = (int) Math.round(this.upperLength * Math.sin(angle1));
         int y1 = (int) -Math.round(this.upperLength * Math.cos(angle1));
         
         int x2 = (int) (x1 + (Math.round(this.lowerLength * Math.sin(angle2))));
@@ -72,21 +73,22 @@ public class Logic {
         double num2p4 = (lowerAngleVel * lowerAngleVel * lowerLength * lowerMass * Math.cos(upperAngle - lowerAngle));
         this.lowerAngleAcc = (num2p1 * (num2p2 + num2p3 + num2p4)) / ( den * lowerLength);
         
+        System.out.println("upper: A: " + upperAngle + " X: " + upperBall.getXlocation() + " Y: " + upperBall.getYlocation() + " L: " + upperLength);
+        System.out.println("lower: A: " + lowerAngle + " X: " + lowerBall.getXlocation() + " Y: " + lowerBall.getYlocation() + " L: " + lowerLength);
+
+        
         this.upperAngleVel += this.upperAngleAcc;
         this.upperAngle += this.upperAngleVel;
         
         this.lowerAngleVel += this.lowerAngleAcc;
         this.lowerAngle += this.lowerAngleVel; 
         
-        System.out.println("upper: A: " + upperAngle + " X: " + upperBall.getXlocation() + " Y: " + upperBall.getYlocation());
-        System.out.println("lower: A: " + lowerAngle + " X: " + lowerBall.getXlocation() + " Y: " + lowerBall.getYlocation());
-        
-        System.out.println(Math.round(this.upperLength * Math.cos(upperAngle)));
-        System.out.println(this.upperLength * Math.cos(upperAngle));
+                
         setBalls(this.upperAngle, this.lowerAngle);
         
         
     }
+    
     public double getLowerLength() {
         return lowerLength;
     }
@@ -99,10 +101,11 @@ public class Logic {
     public Ball getUpperBall() {
         return upperBall;
     }
-    public double getUpperMass() {
-        return upperMass;
+    public double getLowerAngle() {
+        return lowerAngle;
     }
-    public double getLowerMass() {
-        return lowerMass;
+    public double getUpperAngle() {
+        return upperAngle;
     }
+    
 }
