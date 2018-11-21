@@ -8,6 +8,8 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 
 [Työaikakirjanpito](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
 
+[Vaativuusmäärittely](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/vaativuusmaarittely.md)
+
 ## Komentorivitoiminnot
 
 Testaus suoritetaan komennolla: mvn test
