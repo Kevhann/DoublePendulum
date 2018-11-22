@@ -33,7 +33,7 @@ public void start(Stage stage){
         final int leveys = 800;
         final int korkeus = 800;
         final int xoffset = 400;
-        final int yoffset = 80;
+        final int yoffset = 300;
 
         stage.setTitle("DoublePendulum");
 
@@ -53,10 +53,12 @@ public void start(Stage stage){
         new AnimationTimer() {
             private long sleepNanoseconds = 1000 * 1000000;
             private long prevTime = 0;
-            Ball upperBall = new Ball(20,-100,100);  
-            Ball lowerBall = new Ball(20,100,-100);  
+            Ball upperBall = new Ball(20,30,40);  
+            
+            Ball lowerBall = new Ball(upperBall,20,-123,-123);  
             double g = 0.7;
             Logic logic = new Logic(upperBall,lowerBall,g);
+            
             
 
             public void handle(long currentNanoTime) {
@@ -71,8 +73,9 @@ public void start(Stage stage){
                 
                 
                 drawer.fillOval(0, 0, 5, 5);
-                drawer.fillOval(upperBall.getXlocation() , upperBall.getYlocation(), 20, 20);
-                drawer.fillOval(lowerBall.getXlocation(),lowerBall.getYlocation() , 20, 20);
+                drawer.fillOval(upperBall.getXlocation() , upperBall.getYlocation(), upperBall.getMass(), upperBall.getMass());
+                drawer.setFill(javafx.scene.paint.Color.FIREBRICK);
+                drawer.fillOval(lowerBall.getXlocation(),lowerBall.getYlocation() , lowerBall.getMass(), lowerBall.getMass());
                 
                 
                 logic.calculateAcceleration();
@@ -83,7 +86,9 @@ public void start(Stage stage){
         }.start();
         stage.show();
     }
-    public static void main(String[] args){
+    public void compile(String[] args){
+        
+        
         launch(args);
     }
 }
