@@ -5,6 +5,7 @@
  */
 package doublependulum;
 
+import doublependulum.UI.UI;
 import doublependulum.graphics.Drawing;
 import doublependulum.logic.Ball;
 import doublependulum.logic.Logic;
@@ -19,8 +20,10 @@ public class Doublependulum{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        UI ui = new UI();
+        
         Drawing dr = new Drawing();
-        dr.compile(args);
+       // dr.compile(args);
         
     }
     

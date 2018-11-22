@@ -16,6 +16,7 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
@@ -49,6 +50,7 @@ public void start(Stage stage){
         drawer.setFill(javafx.scene.paint.Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
         drawer.translate(xoffset, yoffset);
+        
         
         new AnimationTimer() {
             private long sleepNanoseconds = 1000 * 1000000;
