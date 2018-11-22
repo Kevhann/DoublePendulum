@@ -6,11 +6,6 @@
 package doublependulum.logic;
 
 
-
-/**
- *
- * @author kevhann
- */
 public class Logic {
     private Ball lowerBall;
     private Ball upperBall;
