@@ -5,6 +5,7 @@
  */
 package doublependulum.UI;
 
+import doublependulum.Doublependulum;
 import doublependulum.logic.Logic;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -33,8 +34,8 @@ public class UI extends Application{
         
         stage.setTitle("Doublependulum");
         Button buton = new Button();
-        buton.setText("butonerino");
-        
+        buton.setText("butonerino\npls press");
+        buton.setOnAction(e -> Doublependulum.launchBalls(args));
         StackPane layout = new StackPane();
         layout.getChildren().add(buton);
         

@@ -21,10 +21,11 @@ public class Doublependulum{
      */
     public static void main(String[] args) {
         UI ui = new UI();
-        
-        Drawing dr = new Drawing();
         ui.compile(args);
-        
+    }
+    public static void launchBalls(String[] args){
+        Drawing dr = new Drawing();
+        dr.compile(args);
     }
     
 }
