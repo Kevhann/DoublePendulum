@@ -23,7 +23,7 @@ public class Doublependulum{
         UI ui = new UI();
         
         Drawing dr = new Drawing();
-       // dr.compile(args);
+        ui.compile(args);
         
     }
     
