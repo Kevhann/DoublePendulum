@@ -8,5 +8,6 @@
 | 9.11  | 4    | Projektin rungon toteuttaminen | 
 | 12.11 | 3    | Projektin hiomista | 
 | 20.11 | 1.5  | Maven-projektin luominen ja komentorivin testaaminen| 
-| 23.11 | 2    | Käyttoliittymän lisäystä tai sen yrittämistä |
-| yht   | 13.5 | | 
+| 23.11 | 2    | Käyttoliittymän lisäystä |
+| 24.11 | 5    | Käyttöliittymän lisäystä + ohjelman alustusta | 
+| yht   | 22   | | 
