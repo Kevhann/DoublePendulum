@@ -6,6 +6,7 @@
 package doublependulum.UI;
 
 import doublependulum.Doublependulum;
+import doublependulum.graphics.Drawing;
 import doublependulum.logic.Logic;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -24,9 +25,6 @@ import javafx.stage.Stage;
  * @author kevhann
  */
 public class UI extends Application{
-
-    private Button buton;
-    
     public UI(){
     }
 
@@ -39,7 +37,7 @@ public class UI extends Application{
         buton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                Doublependulum.launchBalls(args);
+                
             }
         });
         StackPane layout = new StackPane();
@@ -51,6 +49,6 @@ public class UI extends Application{
         stage.show();
     }
     public void compile(String[] args){
-        launch(args);
+        launch(UI.class);
     }
 }

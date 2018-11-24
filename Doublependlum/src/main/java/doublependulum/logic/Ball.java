@@ -24,6 +24,12 @@ public class Ball {
         this.ylocation = y;
         this.length = Math.sqrt((x * x) + (y * y));
     }
+    /**
+ * Create a ball with it's x and y location in relation
+ * to another ball
+ * @param ball ball in relation to this
+ * @param mass the mass of the ball
+ */
     public Ball(Ball ball, double mass, int x, int y) {
         this.mass = mass;
         this.xlocation = x + ball.getXlocation();

@@ -5,23 +5,15 @@
  */
 package doublependulum.graphics;
 
+import doublependulum.UI.UI;
 import doublependulum.logic.Ball;
-
 import doublependulum.logic.Logic;
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import javax.swing.*;
-
 /**
  *
  * @author kevhann
@@ -29,7 +21,6 @@ import javax.swing.*;
 public class Drawing extends Application {
 
 public void start(Stage stage){
-        
         
         final int leveys = 800;
         final int korkeus = 800;

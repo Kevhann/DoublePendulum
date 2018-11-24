@@ -21,6 +21,7 @@ public class Logic {
     private final double lowerMass;
     private final double upperMass;
 
+    
     public Logic(Ball upperBall, Ball lowerBall, double g) {
         this.lowerBall = lowerBall;
         this.upperBall = upperBall;
@@ -36,7 +37,11 @@ public class Logic {
         this.upperLength = upperBall.getLength();
         this.lowerLength = lowerBall.getLength();
     }
-    
+/**
+ * Set the x and y location of the balls in according to the angles
+ * @param angle1 the angle of the upper ball
+ * @param angle2 the angle of the lower ball
+ */
     public void setBalls(double angle1, double angle2){
         System.out.println(-Math.round(this.upperLength * Math.cos(angle1)));
         
