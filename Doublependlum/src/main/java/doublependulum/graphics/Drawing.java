@@ -39,8 +39,8 @@ public void start(Stage stage){
         stage.setTitle("DoublePendulum");
 
         Group root = new Group();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+        Scene doublependulum = new Scene(root);
+        stage.setScene(doublependulum);
 
         javafx.scene.canvas.Canvas drawingTable = new javafx.scene.canvas.Canvas(leveys, korkeus);
         root.getChildren().add(drawingTable);
@@ -50,19 +50,16 @@ public void start(Stage stage){
         drawer.setFill(javafx.scene.paint.Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
         drawer.translate(xoffset, yoffset);
+        Ball upperBall = new Ball(20,30,40);
+            Ball lowerBall = new Ball(upperBall,20,-123,-123);  
+            double g = 0.7;
+            Logic logic = new Logic(upperBall,lowerBall,g);
+            
         
         
         new AnimationTimer() {
             private long sleepNanoseconds = 1000 * 1000000;
             private long prevTime = 0;
-            Ball upperBall = new Ball(20,30,40);  
-            
-            Ball lowerBall = new Ball(upperBall,20,-123,-123);  
-            double g = 0.7;
-            Logic logic = new Logic(upperBall,lowerBall,g);
-            
-            
-
             public void handle(long currentNanoTime) {
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
                     return;
@@ -89,8 +86,6 @@ public void start(Stage stage){
         stage.show();
     }
     public void compile(String[] args){
-        
-        
         launch(args);
     }
 }

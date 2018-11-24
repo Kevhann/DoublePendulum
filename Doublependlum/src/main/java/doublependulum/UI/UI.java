@@ -8,6 +8,8 @@ package doublependulum.UI;
 import doublependulum.Doublependulum;
 import doublependulum.logic.Logic;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,7 +28,6 @@ public class UI extends Application{
     private Button buton;
     
     public UI(){
-        
     }
 
     @Override
@@ -35,7 +36,12 @@ public class UI extends Application{
         stage.setTitle("Doublependulum");
         Button buton = new Button();
         buton.setText("butonerino\npls press");
-        buton.setOnAction(e -> Doublependulum.launchBalls(args));
+        buton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                Doublependulum.launchBalls(args);
+            }
+        });
         StackPane layout = new StackPane();
         layout.getChildren().add(buton);
         
