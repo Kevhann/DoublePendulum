@@ -20,7 +20,7 @@ public class Doublependulum{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launchBalls(args);
+        //launchBalls(args);
         UI ui = new UI();
         ui.compile(args);
     }

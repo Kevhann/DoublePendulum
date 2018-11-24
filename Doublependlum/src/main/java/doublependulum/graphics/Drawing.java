@@ -55,7 +55,6 @@ public void start(Stage stage){
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
                     return;
                 }
-                
                 drawer.setFill(javafx.scene.paint.Color.WHITE);
                 drawer.clearRect(-xoffset, -yoffset, leveys, korkeus);
                 drawer.setFill(javafx.scene.paint.Color.BLACK);
