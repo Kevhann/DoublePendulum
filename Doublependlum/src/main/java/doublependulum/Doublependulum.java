@@ -9,6 +9,7 @@ import doublependulum.UI.UI;
 import doublependulum.graphics.Drawing;
 import doublependulum.logic.Ball;
 import doublependulum.logic.Logic;
+import static javafx.application.Application.launch;
 
 /**
  *
@@ -20,16 +21,15 @@ public class Doublependulum{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //launchBalls(args);
+        Drawing dr = new Drawing();
+        dr.compile(args);
         UI ui = new UI();
         ui.compile(args);
     }
-    public static void launchBalls(String[] args){
-        Ball upper = new Ball(20,50,50);
-        Ball lower = new Ball(upper,20,50,50);
-        Logic logic = new Logic(upper,lower,0.5);
-        Drawing dr = new Drawing();
-        dr.compile(args);
+    public static Logic createLogic(){
+        Ball upper = new Ball(20,100,100);
+        Ball lower = new Ball(upper,20,-150,80);
+        return new Logic(upper,lower,0.5);
     }
     
 }

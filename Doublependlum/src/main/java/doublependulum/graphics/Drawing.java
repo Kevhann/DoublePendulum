@@ -5,6 +5,7 @@
  */
 package doublependulum.graphics;
 
+import doublependulum.Doublependulum;
 import doublependulum.UI.UI;
 import doublependulum.logic.Ball;
 import doublependulum.logic.Logic;
@@ -41,15 +42,12 @@ public void start(Stage stage){
         drawer.setFill(javafx.scene.paint.Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
         drawer.translate(xoffset, yoffset);
-        Ball upperBall = new Ball(20,30,40);
-            Ball lowerBall = new Ball(upperBall,20,-123,-123);  
-            double g = 0.7;
-            Logic logic = new Logic(upperBall,lowerBall,g);
-            
+        Logic logic = Doublependulum.createLogic();
+
         
         
         new AnimationTimer() {
-            private long sleepNanoseconds = 1000 * 1000000;
+            private long sleepNanoseconds = 10 * 1000000;
             private long prevTime = 0;
             public void handle(long currentNanoTime) {
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
@@ -62,9 +60,9 @@ public void start(Stage stage){
                 
                 
                 drawer.fillOval(0, 0, 5, 5);
-                drawer.fillOval(upperBall.getXlocation() , upperBall.getYlocation(), upperBall.getMass(), upperBall.getMass());
+                drawer.fillOval(logic.getUpperBall().getXlocation() , logic.getUpperBall().getYlocation(), logic.getUpperBall().getMass(), logic.getUpperBall().getMass());
                 drawer.setFill(javafx.scene.paint.Color.FIREBRICK);
-                drawer.fillOval(lowerBall.getXlocation(),lowerBall.getYlocation() , lowerBall.getMass(), lowerBall.getMass());
+                drawer.fillOval(logic.getLowerBall().getXlocation(),logic.getLowerBall().getYlocation() , logic.getLowerBall().getMass(), logic.getLowerBall().getMass());
                 
                 
                 logic.calculateAcceleration();
