@@ -23,13 +23,14 @@ public class Doublependulum{
     public static void main(String[] args) {
         Drawing dr = new Drawing();
         dr.compile(args);
-        UI ui = new UI();
-        ui.compile(args);
+//        UI ui = new UI();
+//        ui.compile(args);
     }
-    public static Logic createLogic(){
-        Ball upper = new Ball(20,100,100);
-        Ball lower = new Ball(upper,20,-150,80);
-        return new Logic(upper,lower,0.5);
+    public static void initializeLogic(int upperMass,int upperX,int upperY,int lowerMass,int lowerX,int lowerY,double gravity){
+        Drawing dr = new Drawing();
+        Ball upper = new Ball(upperMass,upperX,upperY);
+        Ball lower = new Ball(upper,lowerMass,lowerX,lowerY);
+        dr.setLogic(new Logic(upper,lower,gravity));
     }
     
 }

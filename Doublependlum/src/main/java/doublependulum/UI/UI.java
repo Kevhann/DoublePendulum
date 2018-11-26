@@ -63,7 +63,14 @@ public class UI extends Application{
                     upperBallMassValue.getCharacters().toString().matches("[0-9]?[1-9]") &&
                     gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]"))
                 {
-                    System.out.println("good values");
+                    new Drawing().initializeLogic(Integer.parseInt(upperBallMassValue.getCharacters().toString()),
+                                                  Integer.parseInt(upperBallXLocationValue.getCharacters().toString()),
+                                                  Integer.parseInt(upperBallYLocationValue.getCharacters().toString()),
+                                                  Integer.parseInt(lowerBallMassValue.getCharacters().toString()),
+                                                  Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()),
+                                                  Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()),
+                                                  Integer.parseInt(gravityTextField.getCharacters().toString()));
+                    stage.close();
                 } else{
                     badValues.setText("Enter valid values");
                     System.out.println("bad values");

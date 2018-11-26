@@ -20,9 +20,10 @@ import javafx.stage.Stage;
  * @author kevhann
  */
 public class Drawing extends Application {
+    Logic logic;
 
-public void start(Stage stage){
-        
+public void start(Stage stage) throws Exception{
+        UI ui = new UI();
         final int leveys = 800;
         final int korkeus = 800;
         final int xoffset = 400;
@@ -42,12 +43,12 @@ public void start(Stage stage){
         drawer.setFill(javafx.scene.paint.Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
         drawer.translate(xoffset, yoffset);
-        Logic logic = Doublependulum.createLogic();
 
         
+        ui.start(stage);
         
         new AnimationTimer() {
-            private long sleepNanoseconds = 10 * 1000000;
+            private final long sleepNanoseconds = 10 * 1000000;
             private long prevTime = 0;
             public void handle(long currentNanoTime) {
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
@@ -76,34 +77,9 @@ public void start(Stage stage){
     public void compile(String[] args){
         launch(args);
     }
+    public void initializeLogic(int upperMass,int upperX,int upperY,int lowerMass,int lowerX,int lowerY,double gravity){
+        Ball upper = new Ball(upperMass,upperX,upperY);
+        Ball lower = new Ball(upper,lowerMass,lowerX,lowerY);
+        logic = new Logic(upper,lower,gravity);
+    }
 }
-//
-//    private Point lastPoint;
-//
-//    /**
-//     * Constructs a panel, registering listeners for the mouse.
-//     */
-//    public Drawing() {
-//        // When the mouse button goes down, set the current point
-//        // to the location at which the mouse was pressed.
-//        addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                lastPoint = new Point(e.getX(), e.getY());
-//            }
-//        });
-//
-//        // When the mouse is dragged, draw a line from the old point
-//        // to the new point and update the value of lastPoint to hold
-//        // the new current point.
-//        addMouseMotionListener(new MouseMotionAdapter() {
-//            public void mouseDragged(MouseEvent e) {
-//                Graphics g = getGraphics();
-//                g.drawLine(lastPoint.x, lastPoint.y, e.getX(), e.getY());
-//                lastPoint = new Point(e.getX(), e.getY());
-//                g.dispose();
-//            }
-//        });
-//    }
-//    
-//    
