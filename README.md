@@ -5,6 +5,7 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 
 
 ## Dokumentaatio
+[Arkkitehtuurikuvaus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
 
 [Työaikakirjanpito](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
 
