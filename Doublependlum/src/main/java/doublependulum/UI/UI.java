@@ -1,28 +1,24 @@
 package doublependulum.UI;
 
-import doublependulum.Doublependulum;
 import doublependulum.graphics.Drawing;
-import doublependulum.logic.Logic;
+import doublependulum.logic.Ball;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
  *
  * @author kevhann
  */
-public class UI extends Application{
-    public UI(){
+public class UI extends Application {
+    public UI() {
     }
 
     public void start(Stage stage) throws Exception {
@@ -32,15 +28,15 @@ public class UI extends Application{
         Label xLabel = new Label("Enter X value -199 - 199");
         Label yLabel = new Label("Enter Y value -199 - 199");
         Label massLabel = new Label("Enter ball mass 1 - 99");
-        Label gLabel = new Label("Enter gravity 0.0 - 10\n(lower might work better)");
+        Label gLabel = new Label("Enter gravity 0.0 - 9.99");
         Label badValues = new Label();
-        TextField upperBallXLocationValue = new TextField();
-        TextField upperBallYLocationValue = new TextField();
-        TextField upperBallMassValue = new TextField();
-        TextField lowerBallXLocationValue = new TextField();
-        TextField lowerBallYLocationValue = new TextField();
-        TextField lowerBallMassValue = new TextField();
-        TextField gravityTextField = new TextField();
+        TextField upperBallXLocationValue = new TextField("80");
+        TextField upperBallYLocationValue = new TextField("150");
+        TextField upperBallMassValue = new TextField("25");
+        TextField lowerBallXLocationValue = new TextField("-123");
+        TextField lowerBallYLocationValue = new TextField("-123");
+        TextField lowerBallMassValue = new TextField("30");
+        TextField gravityTextField = new TextField("4");
         upperBallXLocationValue.setPromptText("-199 - 199");
         upperBallXLocationValue.setPromptText("-199 - 199");
         upperBallYLocationValue.setPromptText("-199 - 199");
@@ -55,25 +51,22 @@ public class UI extends Application{
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                if (upperBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") && 
-                    upperBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") && 
-                    upperBallMassValue.getCharacters().toString().matches("[0-9]?[1-9]") &&
-                    lowerBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") && 
-                    lowerBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") &&
-                    upperBallMassValue.getCharacters().toString().matches("[0-9]?[1-9]") &&
-                    gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]"))
+                if (upperBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                    && upperBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                    && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
+                    && lowerBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                    && lowerBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                    && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
+                    && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]"))
                 {
-                    new Drawing().initializeLogic(Integer.parseInt(upperBallMassValue.getCharacters().toString()),
-                                                  Integer.parseInt(upperBallXLocationValue.getCharacters().toString()),
-                                                  Integer.parseInt(upperBallYLocationValue.getCharacters().toString()),
-                                                  Integer.parseInt(lowerBallMassValue.getCharacters().toString()),
-                                                  Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()),
-                                                  Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()),
-                                                  Integer.parseInt(gravityTextField.getCharacters().toString()));
+                    Drawing dr = new Drawing();
+                    Ball upperBall = new Ball(Integer.parseInt(upperBallMassValue.getCharacters().toString()), Integer.parseInt(upperBallXLocationValue.getCharacters().toString()), Integer.parseInt(upperBallYLocationValue.getCharacters().toString()));
+                    Ball lowerBall = new Ball(upperBall,Integer.parseInt(lowerBallMassValue.getCharacters().toString()), Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()), Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()));
+                    dr.initializeLogic(upperBall, lowerBall, (Double.parseDouble(gravityTextField.getCharacters().toString()) / 10));
+                    dr.start();
                     stage.close();
-                } else{
-                    badValues.setText("Enter valid values");
-                    System.out.println("bad values");
+                } else {
+                    badValues.setText("Enter valid values");;
                     upperBallXLocationValue.setText("");
                     upperBallYLocationValue.setText("");
                     upperBallMassValue.setText("");
@@ -85,35 +78,31 @@ public class UI extends Application{
             }
         });
         GridPane layout = new GridPane();
-        layout.setPadding(new Insets(20,20,20,20));
+        layout.setPadding(new Insets(20, 20, 20, 20));
         layout.setVgap(5);
         layout.setHgap(10);
-        GridPane.setConstraints(upperBall, 0, 1);
-        GridPane.setConstraints(lowerBall, 0, 2);
-        GridPane.setConstraints(xLabel, 1, 0);
-        GridPane.setConstraints(yLabel, 2, 0);
-        GridPane.setConstraints(gLabel, 0, 3,1,2);
-        GridPane.setConstraints(massLabel, 3, 0);
         
-        GridPane.setConstraints(upperBallXLocationValue, 1, 1);
-        GridPane.setConstraints(upperBallYLocationValue, 2, 1);
-        GridPane.setConstraints(upperBallMassValue, 3, 1);
-        GridPane.setConstraints(lowerBallXLocationValue, 1, 2);
-        GridPane.setConstraints(lowerBallYLocationValue, 2, 2);
-        GridPane.setConstraints(lowerBallMassValue, 3, 2);
-        GridPane.setConstraints(gravityTextField, 1, 3);
-        GridPane.setConstraints(startButton, 1, 4);
-        GridPane.setConstraints(badValues, 1, 5,2,1);
-        
-        layout.getChildren().addAll(lowerBallMassValue,upperBallMassValue,massLabel,upperBall,lowerBall,xLabel,upperBallXLocationValue,upperBallYLocationValue,yLabel,lowerBallXLocationValue,lowerBallYLocationValue,gLabel,gravityTextField,startButton,badValues);
-        
-        Scene scene = new Scene(layout,700,220);
+        layout.add(upperBall, 0, 1);
+        layout.add(lowerBall, 0, 2);
+        layout.add(xLabel, 1, 0);
+        layout.add(yLabel, 2, 0);
+        layout.add(gLabel, 0, 3);
+        layout.add(massLabel, 3, 0);
+        layout.add(upperBallXLocationValue, 1, 1);
+        layout.add(upperBallYLocationValue, 2, 1);
+        layout.add(upperBallMassValue, 3, 1);
+        layout.add(lowerBallXLocationValue, 1, 2);
+        layout.add(lowerBallYLocationValue, 2, 2);
+        layout.add(lowerBallMassValue, 3, 2);
+        layout.add(gravityTextField, 1, 3);
+        layout.add(startButton, 1, 4);
+        layout.add(badValues, 1, 5, 2, 1);
+            
+        Scene scene = new Scene(layout, 740, 220);
         stage.setScene(scene);
-        
         stage.show();
-        
     } 
-    public void compile(String[] args){
+    public void compile(String[] args) {
         launch(UI.class);
     }
 }

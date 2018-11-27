@@ -36,21 +36,21 @@ public class Ball {
         this.ylocation = y - ball.getYlocation();
         this.length = Math.sqrt((x * x) + (y * y));
     }
-    public double calculateStartingAngle(){
+    public double calculateStartingAngle() {
         double angle = Math.sin(xlocation / length);
         if (ylocation > 0){
             if (xlocation < 0){
-                return -((Math.PI) + angle);
+                return - ((Math.PI) + angle);
             } else {
                 return ((Math.PI) - angle);
             }
         }
         return angle;
     }
-    public double calculateStartingAngle(Ball ball){
-        double angle = Math.sin(((xlocation - ball.getXlocation())/ length));
-        if (ylocation > 0){
-            if (xlocation < ball.getXlocation()){
+    public double calculateStartingAngle(Ball ball) {
+        double angle = Math.sin(((xlocation - ball.getXlocation()) / length));
+        if (ylocation + ball.getYlocation() > 0) {
+            if (xlocation < ball.getXlocation()) {
                 return -((Math.PI) + angle);
             } else {
                 return ((Math.PI) - angle);
@@ -62,7 +62,7 @@ public class Ball {
     public double getMass() {
         return mass;
     }
-    public void setXY(int x, int y){
+    public void setXY(int x, int y) {
         this.xlocation = x;
         this.ylocation = y;
     }
