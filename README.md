@@ -15,4 +15,4 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 
 Testaus suoritetaan komennolla: mvn test
 
-Testikattavuusraportti: 
+Testikattavuusraportti luodann komennolla: mvn test jacoco:report
