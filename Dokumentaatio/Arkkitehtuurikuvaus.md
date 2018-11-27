@@ -5,7 +5,10 @@ Ohjelma koostuu kahdesta osasta, käyttöliittymästä ja itse simulaatiosta.
 Ohjelma on toteutettu kolmessa eri paketissa
 
 Luokkakaavio:
-%2F%2F Cool Class Diagram, [Ball|-xlocation:int;-ylocation:int;-mass:double;-length:double|setXY(int.int);calculateStartingAngle()]<-2[Logic|-gravity:double;-upperAngle:double;-upperAngleVel:double;-upperAngleAcc:double;-lowerAngle:double;-lowerAngleVel:double;-lowerAngleAcc:double | calculateAcceleration();setBalls(double.double)], [Drawing|-upperLine:Line;-lowerLine:Line]->[Logic],[UI]->[Drawing],[Main]->[UI]
+
+![GitHub Logo](/laskarit/viikko3/DoublependulumLuokat.png)
+Format: ![Alt Text](url)
+
 
 ## Käyttöliittymä
 Käyttöliittymä on toteutettu paketissa Doublependulum.UI sijaitsevassa luokassa UI
