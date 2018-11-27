@@ -47,7 +47,7 @@ public class Logic {
     }
     public void calculateAcceleration() {
         
-        double den =((2 * upperBall.getMass()) + lowerBall.getMass() - (lowerBall.getMass() * (Math.cos(2 * (upperAngle-lowerAngle)))));
+        double den = ((2 * upperBall.getMass()) + lowerBall.getMass() - (lowerBall.getMass() * (Math.cos(2 * (upperAngle-lowerAngle)))));
         
         double num1p1 = ((-gravity) * ((2 * upperBall.getMass()) + lowerBall.getMass()) * Math.sin(upperAngle));
         double num1p2 = (lowerBall.getMass() * gravity * Math.sin(upperAngle - (2 * lowerAngle)));
@@ -61,10 +61,7 @@ public class Logic {
         double num2p2 = (upperAngleVel * upperAngleVel * upperBall.getLength() * (upperBall.getMass() + lowerBall.getMass()));
         double num2p3 = ( gravity * (lowerBall.getMass() + upperBall.getMass()) * Math.cos(upperAngle));
         double num2p4 = (lowerAngleVel * lowerAngleVel * lowerBall.getLength() * lowerBall.getMass() * Math.cos(upperAngle - lowerAngle));
-        this.lowerAngleAcc = (num2p1 * (num2p2 + num2p3 + num2p4)) / ( den * lowerBall.getLength());
-        
-        System.out.println("upper: A: " + upperAngle + " X: " + upperBall.getXlocation() + " Y: " + upperBall.getYlocation() + " L: " + upperBall.getLength());
-        System.out.println("lower: A: " + lowerAngle + " X: " + lowerBall.getXlocation() + " Y: " + lowerBall.getYlocation() + " L: " + lowerBall.getLength());
+        this.lowerAngleAcc = (num2p1 * (num2p2 + num2p3 + num2p4)) / ( den * lowerBall.getLength()); 
         
         this.upperAngleVel += this.upperAngleAcc;
         this.upperAngle += this.upperAngleVel;

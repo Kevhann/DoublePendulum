@@ -51,9 +51,9 @@ public class Ball {
         double angle = Math.sin(((xlocation - ball.getXlocation()) / length));
         if (ylocation + ball.getYlocation() > 0) {
             if (xlocation < ball.getXlocation()) {
-                return -((Math.PI) + angle);
+                return - ((Math.PI) + angle);
             } else {
-                return ((Math.PI) - angle);
+                return (Math.PI- angle);
             }
         }
         return angle;
@@ -70,7 +70,7 @@ public class Ball {
         return xlocation;
     }
     public int getYlocation() {
-        return -ylocation;
+        return - ylocation;
     }
     public double getLength() {
         return length;
