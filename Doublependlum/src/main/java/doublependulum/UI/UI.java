@@ -52,13 +52,12 @@ public class UI extends Application {
             @Override
             public void handle(ActionEvent e) {
                 if (upperBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                    && upperBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                    && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                    && lowerBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                    && lowerBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                    && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                    && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]"))
-                {
+                && upperBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
+                && lowerBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                && lowerBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
+                && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
+                && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]")) {
                     Drawing dr = new Drawing();
                     Ball upperBall = new Ball(Integer.parseInt(upperBallMassValue.getCharacters().toString()), Integer.parseInt(upperBallXLocationValue.getCharacters().toString()), Integer.parseInt(upperBallYLocationValue.getCharacters().toString()));
                     Ball lowerBall = new Ball(upperBall,Integer.parseInt(lowerBallMassValue.getCharacters().toString()), Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()), Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()));

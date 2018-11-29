@@ -22,10 +22,10 @@ public class Drawing {
 
 public void start() {
         Stage pendulums = new Stage();
-        final int leveys = 800;
-        final int korkeus = 800;
-        final int xoffset = 400;
-        final int yoffset = 300;
+        final int leveys = 1000;
+        final int korkeus = 1000;
+        final int xoffset = 500;
+        final int yoffset = 100;
         Line upperLine = new Line();
         Line lowerLine = new Line();
         upperLine.setStartX(xoffset + 2);
@@ -46,7 +46,7 @@ public void start() {
         drawer.translate(xoffset, yoffset);
         
         new AnimationTimer() {
-            private final long sleepNanoseconds = 10 * 1000000;
+            private final long sleepNanoseconds = 8 * 1000000;
             private long prevTime = 0;
             public void handle(long currentNanoTime) {
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
@@ -57,10 +57,11 @@ public void start() {
                 drawer.setFill(javafx.scene.paint.Color.BLACK);
                 
                 drawer.fillOval(0, 0, 5, 5);
-                drawer.fillOval(logic.getUpperBall().getXlocation() , logic.getUpperBall().getYlocation(), logic.getUpperBall().getMass(), logic.getUpperBall().getMass());
+                drawer.setFill(javafx.scene.paint.Color.FIREBRICK);
+                drawer.fillOval(logic.getUpperBall().getXlocation(), logic.getUpperBall().getYlocation(), logic.getUpperBall().getMass(), logic.getUpperBall().getMass());
                 upperLine.setEndX(logic.getUpperBall().getXlocation() + xoffset + logic.getUpperBall().getMass() / 2);
                 upperLine.setEndY(logic.getUpperBall().getYlocation() + yoffset + logic.getUpperBall().getMass() / 2);
-                drawer.setFill(javafx.scene.paint.Color.FIREBRICK);
+                
                 lowerLine.setStartX(logic.getUpperBall().getXlocation() + xoffset + logic.getUpperBall().getMass() / 2);
                 lowerLine.setStartY(logic.getUpperBall().getYlocation() + yoffset + logic.getUpperBall().getMass() / 2);
                 lowerLine.setEndX(logic.getLowerBall().getXlocation() + xoffset + logic.getLowerBall().getMass() / 2);

@@ -90,5 +90,19 @@ public class LogicTest {
         assertEquals(-0.00816607358,logic1.getUpperAngleAcc(), 0.0000001);
         assertEquals(0.00344926770,logic1.getLowerAngleAcc(), 0.0000001);
     }
+    @Test
+    public void ballsMoveCorrectlyWithSetXY(){
+        assertEquals(30, upper1.getXlocation());
+        assertEquals(-40, upper1.getYlocation());
+        assertEquals(30, lower1.getXlocation());
+        assertEquals(-140, lower1.getYlocation());
+        upper1.setXY(-55, 55);
+        lower1.setXY(123, 123);
+        assertEquals(-55, upper1.getXlocation());
+        assertEquals(-55, upper1.getXlocation());
+        assertEquals(123, lower1.getXlocation());
+        assertEquals(-123, lower1.getYlocation());
+
+    }
     
 }
