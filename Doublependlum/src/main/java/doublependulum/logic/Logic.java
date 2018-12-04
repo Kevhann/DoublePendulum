@@ -49,7 +49,7 @@ public class Logic {
         
         double den = ((2 * upperBall.getMass()) + lowerBall.getMass() - (lowerBall.getMass() * (Math.cos(2 * (upperAngle-lowerAngle)))));
         
-        double num1p1 = ((-gravity) * ((2 * upperBall.getMass()) + lowerBall.getMass()) * Math.sin(upperAngle));
+        double num1p1 = ((- gravity) * ((2 * upperBall.getMass()) + lowerBall.getMass()) * Math.sin(upperAngle));
         double num1p2 = (lowerBall.getMass() * gravity * Math.sin(upperAngle - (2 * lowerAngle)));
         double num1p3 = (2 * Math.sin(upperAngle - lowerAngle) * lowerBall.getMass());
         double num1p4 = (lowerAngleVel * lowerAngleVel * lowerBall.getLength() + (upperAngleVel * upperAngleVel * upperBall.getLength()) * Math.cos(upperAngle - lowerAngle));
@@ -57,11 +57,11 @@ public class Logic {
         
         this.upperAngleAcc = (num1p1 - num1p2 - (num1p3 * num1p4))/ (den * upperBall.getLength());
 
-        double num2p1 =  2 * Math.sin(upperAngle - lowerAngle);
+        double num2p1 = (2 * Math.sin(upperAngle - lowerAngle));
         double num2p2 = (upperAngleVel * upperAngleVel * upperBall.getLength() * (upperBall.getMass() + lowerBall.getMass()));
-        double num2p3 = ( gravity * (lowerBall.getMass() + upperBall.getMass()) * Math.cos(upperAngle));
+        double num2p3 = (gravity * (lowerBall.getMass() + upperBall.getMass()) * Math.cos(upperAngle));
         double num2p4 = (lowerAngleVel * lowerAngleVel * lowerBall.getLength() * lowerBall.getMass() * Math.cos(upperAngle - lowerAngle));
-        this.lowerAngleAcc = (num2p1 * (num2p2 + num2p3 + num2p4)) / ( den * lowerBall.getLength()); 
+        this.lowerAngleAcc = (num2p1 * (num2p2 + num2p3 + num2p4)) / (den * lowerBall.getLength()); 
         
         this.upperAngleVel += this.upperAngleAcc;
         this.upperAngle += this.upperAngleVel;

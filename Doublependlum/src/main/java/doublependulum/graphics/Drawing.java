@@ -7,9 +7,12 @@ package doublependulum.graphics;
 
 import doublependulum.logic.Ball;
 import doublependulum.logic.Logic;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
@@ -24,7 +27,7 @@ public void start() {
         Stage pendulums = new Stage();
         final int leveys = 1000;
         final int korkeus = 1000;
-        final int xoffset = 500;
+        final int xoffset = leveys / 2;
         final int yoffset = 100;
         Line upperLine = new Line();
         Line lowerLine = new Line();
@@ -37,13 +40,14 @@ public void start() {
         Scene doublependulum = new Scene(root);
         pendulums.setScene(doublependulum);
 
-        javafx.scene.canvas.Canvas drawingTable = new javafx.scene.canvas.Canvas(leveys, korkeus);
-        root.getChildren().addAll(drawingTable,upperLine,lowerLine);
+        Canvas drawingTable = new Canvas(leveys, korkeus);
+        root.getChildren().addAll(drawingTable, upperLine, lowerLine);
 
         GraphicsContext drawer = drawingTable.getGraphicsContext2D();
         drawer.setFill(javafx.scene.paint.Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
         drawer.translate(xoffset, yoffset);
+        
         
         new AnimationTimer() {
             private final long sleepNanoseconds = 8 * 1000000;
@@ -69,8 +73,7 @@ public void start() {
                 
                 drawer.fillOval(logic.getLowerBall().getXlocation(),logic.getLowerBall().getYlocation() , logic.getLowerBall().getMass(), logic.getLowerBall().getMass());
                 
-                logic.calculateAcceleration();
-                
+                logic.calculateAcceleration(); 
                 prevTime = currentNanoTime;
             }
         }.start();

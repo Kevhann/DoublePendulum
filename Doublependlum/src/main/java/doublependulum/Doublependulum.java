@@ -10,7 +10,7 @@ import doublependulum.UI.UI;
  *
  * @author kevhann
  */
-public class Doublependulum{
+public class Doublependulum {
 
     /**
      * @param args the command line arguments

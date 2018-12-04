@@ -60,38 +60,38 @@ public class LogicTest {
     }
 
     @Test
-    public void ballsHaveCorrectLength1(){
-        assertEquals(50.0,logic1.getUpperBall().getLength(), 0.0001);
-        assertEquals(100.0,logic1.getLowerBall().getLength(), 0.0001);
+    public void ballsHaveCorrectLength1() {
+        assertEquals(50.0, logic1.getUpperBall().getLength(), 0.0001);
+        assertEquals(100.0, logic1.getLowerBall().getLength(), 0.0001);
     }
     @Test
-    public void ballsHaveCorrectLength2(){
-        assertEquals(170.0,logic2.getUpperBall().getLength(), 0.0001);
-        assertEquals(173.94827,logic2.getLowerBall().getLength(), 0.0001);
+    public void ballsHaveCorrectLength2() {
+        assertEquals(170.0, logic2.getUpperBall().getLength(), 0.0001);
+        assertEquals(173.94827, logic2.getLowerBall().getLength(), 0.0001);
     }
     @Test
-    public void ballsHaveCorrectAngle1(){
-        assertEquals(2.57695,logic1.getUpperAngle(), 0.0001);
-        assertEquals(Math.PI,logic1.getLowerAngle(), 0.0001);
+    public void ballsHaveCorrectAngle1() {
+        assertEquals(2.57695, logic1.getUpperAngle(), 0.0001);
+        assertEquals(Math.PI, logic1.getLowerAngle(), 0.0001);
     }
     @Test
-    public void ballsHaveCorrectAngle2(){
-        assertEquals(2.68818,logic2.getUpperAngle(), 0.0001);
-        assertEquals(-0.64963,logic2.getLowerAngle(), 0.0001);
+    public void ballsHaveCorrectAngle2() {
+        assertEquals(2.68818, logic2.getUpperAngle(), 0.0001);
+        assertEquals(-0.64963, logic2.getLowerAngle(), 0.0001);
     }
     @Test
-    public void ballsHaveCorrectAngle3(){
-        assertEquals(-2.74965,logic3.getUpperAngle(), 0.0001);
-        assertEquals(-2.49195,logic3.getLowerAngle(), 0.0001);
+    public void ballsHaveCorrectAngle3() {
+        assertEquals(-2.74965, logic3.getUpperAngle(), 0.0001);
+        assertEquals(-2.49195, logic3.getLowerAngle(), 0.0001);
     }
     @Test
-    public void correctAngleAccelerationCalculation(){
+    public void correctAngleAccelerationCalculation() {
         logic1.calculateAcceleration();
-        assertEquals(-0.00816607358,logic1.getUpperAngleAcc(), 0.0000001);
-        assertEquals(0.00344926770,logic1.getLowerAngleAcc(), 0.0000001);
+        assertEquals(-0.00816607358, logic1.getUpperAngleAcc(), 0.0000001);
+        assertEquals(0.00344926770, logic1.getLowerAngleAcc(), 0.0000001);
     }
     @Test
-    public void ballsMoveCorrectlyWithSetXY(){
+    public void ballsMoveCorrectlyWithSetXY() {
         assertEquals(30, upper1.getXlocation());
         assertEquals(-40, upper1.getYlocation());
         assertEquals(30, lower1.getXlocation());
@@ -102,7 +102,5 @@ public class LogicTest {
         assertEquals(-55, upper1.getXlocation());
         assertEquals(123, lower1.getXlocation());
         assertEquals(-123, lower1.getYlocation());
-
     }
-    
 }
