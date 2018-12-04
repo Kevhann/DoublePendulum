@@ -13,4 +13,4 @@
 | 26.11 | 2    | Käyttöliittymän lisäystä + bugien korjausta | 
 | 27.11 | 3    | Käyttöliittymä valmiiksi, testikattavuutta, checkstyle korjauksia | 
 | 28.11 | 3.5  | Viikon 5 asioita, jäljen lisäys, toiminnallisuuden & tarkkuuden parantamista |
-| yht   | 27   | | 
+| yht   | 30.5   | | 
