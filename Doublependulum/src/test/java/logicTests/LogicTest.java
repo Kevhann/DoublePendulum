@@ -92,15 +92,15 @@ public class LogicTest {
     }
     @Test
     public void ballsMoveCorrectlyWithSetXY() {
-        assertEquals(30, upper1.getXlocation());
-        assertEquals(-40, upper1.getYlocation());
-        assertEquals(30, lower1.getXlocation());
-        assertEquals(-140, lower1.getYlocation());
+        assertEquals(25, upper1.getXlocation());
+        assertEquals(-45, upper1.getYlocation());
+        assertEquals(15, lower1.getXlocation());
+        assertEquals(-155, lower1.getYlocation());
         upper1.setXY(-55, 55);
         lower1.setXY(123, 123);
-        assertEquals(-55, upper1.getXlocation());
-        assertEquals(-55, upper1.getXlocation());
-        assertEquals(123, lower1.getXlocation());
-        assertEquals(-123, lower1.getYlocation());
+        assertEquals(-60, upper1.getXlocation());
+        assertEquals(-60, upper1.getYlocation());
+        assertEquals(113, lower1.getXlocation());
+        assertEquals(-133, lower1.getYlocation());
     }
 }

@@ -7,8 +7,6 @@ package doublependulum.graphics;
 
 import doublependulum.logic.Ball;
 import doublependulum.logic.Logic;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -23,7 +21,7 @@ import javafx.stage.Stage;
 public class Drawing {
     private Logic logic;
 
-public void start() {
+    public void start() {
         Stage pendulums = new Stage();
         final int leveys = 1000;
         final int korkeus = 1000;
@@ -71,7 +69,7 @@ public void start() {
                 lowerLine.setEndX(logic.getLowerBall().getXlocation() + xoffset + logic.getLowerBall().getMass() / 2);
                 lowerLine.setEndY(logic.getLowerBall().getYlocation() + yoffset + logic.getLowerBall().getMass() / 2);
                 
-                drawer.fillOval(logic.getLowerBall().getXlocation(),logic.getLowerBall().getYlocation() , logic.getLowerBall().getMass(), logic.getLowerBall().getMass());
+                drawer.fillOval(logic.getLowerBall().getXlocation(), logic.getLowerBall().getYlocation() , logic.getLowerBall().getMass(), logic.getLowerBall().getMass());
                 
                 logic.calculateAcceleration(); 
                 prevTime = currentNanoTime;

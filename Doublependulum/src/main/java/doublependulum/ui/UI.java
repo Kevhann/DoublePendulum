@@ -1,4 +1,4 @@
-package doublependulum.UI;
+package doublependulum.ui;
 
 import doublependulum.graphics.Drawing;
 import doublependulum.logic.Ball;
@@ -25,8 +25,8 @@ public class UI extends Application {
         stage.setTitle("Doublependulum");
         Label upperBall = new Label("Upper ball parameters");
         Label lowerBall = new Label("Lower ball parameters");
-        Label xLabel = new Label("Enter X value -199 - 199");
-        Label yLabel = new Label("Enter Y value -199 - 199");
+        Label xLabel = new Label("Enter X value -299 - 299");
+        Label yLabel = new Label("Enter Y value -299 - 299");
         Label massLabel = new Label("Enter ball mass 1 - 99");
         Label gLabel = new Label("Enter gravity 0.0 - 9.99");
         Label badValues = new Label();
@@ -37,11 +37,11 @@ public class UI extends Application {
         TextField lowerBallYLocationValue = new TextField("-123");
         TextField lowerBallMassValue = new TextField("30");
         TextField gravityTextField = new TextField("4");
-        upperBallXLocationValue.setPromptText("-199 - 199");
-        upperBallXLocationValue.setPromptText("-199 - 199");
-        upperBallYLocationValue.setPromptText("-199 - 199");
-        lowerBallXLocationValue.setPromptText("-199 - 199");
-        lowerBallYLocationValue.setPromptText("-199 - 199");
+        upperBallXLocationValue.setPromptText("-299 - 299");
+        upperBallXLocationValue.setPromptText("-299 - 299");
+        upperBallYLocationValue.setPromptText("-299 - 299");
+        lowerBallXLocationValue.setPromptText("-299 - 299");
+        lowerBallYLocationValue.setPromptText("-299 - 299");
         upperBallMassValue.setPromptText("1 - 99");
         lowerBallMassValue.setPromptText("1 - 99");
         gravityTextField.setPromptText("0.01 - 9.99");
@@ -51,16 +51,17 @@ public class UI extends Application {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                if (upperBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                && upperBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                && lowerBallXLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                && lowerBallYLocationValue.getCharacters().toString().matches("-?1?[0-9]{1,2}") 
-                && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]")) {
+                if (upperBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
+                    && upperBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
+                    && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
+                    && lowerBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
+                    && lowerBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
+                    && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
+                    && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]")) {
+                    
                     Drawing dr = new Drawing();
                     Ball upperBall = new Ball(Integer.parseInt(upperBallMassValue.getCharacters().toString()), Integer.parseInt(upperBallXLocationValue.getCharacters().toString()), Integer.parseInt(upperBallYLocationValue.getCharacters().toString()));
-                    Ball lowerBall = new Ball(upperBall,Integer.parseInt(lowerBallMassValue.getCharacters().toString()), Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()), Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()));
+                    Ball lowerBall = new Ball(upperBall, Integer.parseInt(lowerBallMassValue.getCharacters().toString()), Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()), Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()));
                     dr.initializeLogic(upperBall, lowerBall, (Double.parseDouble(gravityTextField.getCharacters().toString()) / 10));
                     dr.start();
                     stage.close();
@@ -80,7 +81,6 @@ public class UI extends Application {
         layout.setPadding(new Insets(20, 20, 20, 20));
         layout.setVgap(5);
         layout.setHgap(10);
-        
         layout.add(upperBall, 0, 1);
         layout.add(lowerBall, 0, 2);
         layout.add(xLabel, 1, 0);

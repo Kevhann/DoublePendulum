@@ -14,6 +14,7 @@ public class Ball {
     private int ylocation;
     final private double mass;
     final private double length;
+    
 /**
  * Create a ball which tracks it's x and y location
  * @param mass the mass of the ball
@@ -39,8 +40,8 @@ public class Ball {
     public double calculateStartingAngle() {
         double angle = Math.sin(xlocation / length);
         if (ylocation > 0) {
-            if (xlocation < 0){
-                return - (Math.PI + angle);
+            if (xlocation < 0) {
+                return -(Math.PI + angle);
             } else {
                 return (Math.PI - angle);
             }
@@ -51,7 +52,7 @@ public class Ball {
         double angle = Math.sin(((xlocation - ball.getXlocation()) / length));
         if (ylocation + ball.getYlocation() > 0) {
             if (xlocation < ball.getXlocation()) {
-                return - (Math.PI + angle);
+                return -(Math.PI + angle);
             } else {
                 return (Math.PI - angle);
             }
@@ -67,10 +68,10 @@ public class Ball {
         this.ylocation = y;
     }
     public int getXlocation() {
-        return xlocation;
+        return xlocation - (int) (mass / 2);
     }
     public int getYlocation() {
-        return - ylocation;
+        return -ylocation - (int) (mass / 2);
     }
     public double getLength() {
         return length;

@@ -5,7 +5,7 @@
  */
 package doublependulum;
 
-import doublependulum.UI.UI;
+import doublependulum.ui.UI;
 /**
  *
  * @author kevhann
