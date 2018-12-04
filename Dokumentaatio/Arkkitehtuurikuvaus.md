@@ -6,7 +6,7 @@ Ohjelma on toteutettu kolmessa eri paketissa
 
 Luokkakaavio:
 
-![GitHub Logo](/laskarit/viikko3/DoublependulumLuokat.png)
+![GitHub Logo](/Dokumentaatio/DoublependulumLuokat.png)
 
 
 ## Käyttöliittymä
