@@ -30,12 +30,12 @@ public class UI extends Application {
         Label massLabel = new Label("Enter ball mass 1 - 99");
         Label gLabel = new Label("Enter gravity 0.0 - 9.99");
         Label badValues = new Label();
-        TextField upperBallXLocationValue = new TextField("80");
+        TextField upperBallXLocationValue = new TextField("180");
         TextField upperBallYLocationValue = new TextField("150");
-        TextField upperBallMassValue = new TextField("25");
-        TextField lowerBallXLocationValue = new TextField("-123");
-        TextField lowerBallYLocationValue = new TextField("-123");
-        TextField lowerBallMassValue = new TextField("30");
+        TextField upperBallMassValue = new TextField("55");
+        TextField lowerBallXLocationValue = new TextField("-193");
+        TextField lowerBallYLocationValue = new TextField("-223");
+        TextField lowerBallMassValue = new TextField("40");
         TextField gravityTextField = new TextField("4");
         upperBallXLocationValue.setPromptText("-299 - 299");
         upperBallXLocationValue.setPromptText("-299 - 299");
