@@ -64,7 +64,7 @@ public class Drawing {
                 drawer.setFill(Color.WHITE);
                 drawer.clearRect(-xoffset, -yoffset, leveys, korkeus);
                 
-                drawLines(logic.getUpperBall(), logic.getLowerBall(),upperLine,lowerLine);
+                drawLines(logic.getUpperBall(), logic.getLowerBall(), upperLine, lowerLine);
                 
                 drawer.setFill(Color.FIREBRICK);
                 drawer.fillOval(logic.getUpperBall().getXlocation(), logic.getUpperBall().getYlocation(), logic.getUpperBall().getMass(), logic.getUpperBall().getMass());
@@ -78,7 +78,7 @@ public class Drawing {
         }.start();
         pendulums.show();
     }
-    public void drawLines(Ball upper, Ball lower, Line upperLine, Line lowerLine){
+    public void drawLines(Ball upper, Ball lower, Line upperLine, Line lowerLine) {
         upperLine.setEndX(logic.getUpperBall().getXlocation()  + logic.getUpperBall().getMass() / 2);
         upperLine.setEndY(logic.getUpperBall().getYlocation() + logic.getUpperBall().getMass() / 2);
 
