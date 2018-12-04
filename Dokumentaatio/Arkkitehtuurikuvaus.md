@@ -6,7 +6,7 @@ Ohjelma on toteutettu kolmessa eri paketissa
 
 Luokkakaavio:
 
-![GitHub Logo](/laskarit/viikko3/DoublependulumLuokat.png)
+![GitHub Logo](/Dokumentaatio/DoublependulumLuokat.png)
 
 
 ## Käyttöliittymä
@@ -26,3 +26,5 @@ Itse ohjelma käynnistetään tästä näkymästä painamalla "Start" nappia.
 Sovelluslogiikka sijaitsee Doublependulum.logic paketissa.
 Sovelluslogiikan toteuttaa luokat Ball ja Logic. 
 Luokka Ball kuvaa palloa. Pallo voidaan luoda joko yksin, tai toisen pallon suhteen.
+### Pallojen päivittäminen
+![GitHub Logo](/Dokumentaatio/PallojenPaivittaminenSEK.png)
