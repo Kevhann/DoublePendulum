@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package doublependulum.logic;
 
 /**
- *
- * @author kevhann
+ * The ball of the simulation.
+ * Has specified x and y coordinates, mass and length from its starting position.
  */
 public class Ball {
     private int xlocation;
@@ -15,10 +10,12 @@ public class Ball {
     final private double mass;
     final private double length;
     
-/**
- * Create a ball which tracks it's x and y location
- * @param mass the mass of the ball
- */
+    /**
+     * Create a parent ball which tracks it's x and y location
+     * @param x the x location of the ball
+     * @param y the y location of the ball. Y location increases upwards.
+     * @param mass the mass of the ball
+     */
     public Ball(double mass, int x, int y) {
         this.mass = mass;
         this.xlocation = x;
@@ -26,17 +23,24 @@ public class Ball {
         this.length = Math.sqrt((x * x) + (y * y));
     }
     /**
- * Create a ball with it's x and y location in relation
- * to another ball
- * @param ball ball in relation to this
- * @param mass the mass of the ball
- */
+    * Create a child ball with it's x and y location in relation
+    * to the parent ball.
+    * @param ball the parent ball.
+    * @param mass the mass of the ball.
+    * @param x the x location of the ball in relation to the parent ball.
+    * @param y the y location of the ball in relation to the parent ball. Y location increases upwards.
+    */
     public Ball(Ball ball, double mass, int x, int y) {
         this.mass = mass;
         this.xlocation = x + ball.getXlocation();
         this.ylocation = y - ball.getYlocation();
         this.length = Math.sqrt((x * x) + (y * y));
     }
+
+    /**
+     * Calculates the starting angle for the parent ball in relation to a vertical line from the given user inputs.
+     * @return angle from -PI to PI. Positive angle is counter clockwise.
+     */
     public double calculateStartingAngle() {
         double angle = Math.sin(xlocation / length);
         if (ylocation > 0) {
@@ -48,6 +52,12 @@ public class Ball {
         }
         return angle;
     }
+
+    /**
+     * Calculates the starting angle for the child ball in relation to a vertical line from the user inputs.
+     * @param ball the parent ball
+     * @return angle from -PI to PI. Positive angle is counter clockwise.
+     */
     public double calculateStartingAngle(Ball ball) {
         double angle = Math.sin(((xlocation - ball.getXlocation()) / length));
         if (ylocation + ball.getYlocation() > 0) {
@@ -63,6 +73,12 @@ public class Ball {
     public double getMass() {
         return mass;
     }
+
+    /**
+     * Set the x and y coordinates for the ball
+     * @param x x coordinate
+     * @param y y coordinate
+     */
     public void setXY(int x, int y) {
         this.xlocation = x;
         this.ylocation = y;

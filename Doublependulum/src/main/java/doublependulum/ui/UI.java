@@ -2,6 +2,7 @@ package doublependulum.ui;
 
 import doublependulum.graphics.Drawing;
 import doublependulum.logic.Ball;
+import java.util.concurrent.ThreadLocalRandom;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,13 +15,16 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
- *
- * @author kevhann
+ * Create the user interface and launch the simulation.
  */
 public class UI extends Application {
+
     public UI() {
     }
-
+    /**
+    * Create the user interface window for setting the parameters for the simulation.
+    * Launch the simulation when attributes are within restrictions.
+    */
     public void start(Stage stage) throws Exception {
         stage.setTitle("Doublependulum");
         Label upperBall = new Label("Upper ball parameters");
@@ -46,8 +50,20 @@ public class UI extends Application {
         lowerBallMassValue.setPromptText("1 - 99");
         gravityTextField.setPromptText("0.01 - 9.99");
         
-        Button startButton = new Button();
-        startButton.setText("Start");
+        Button startButton = new Button("Start");
+        Button randomizeButton = new Button("Randomize!");
+        
+        randomizeButton.setOnAction(s -> {
+            upperBallXLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
+            upperBallXLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
+            upperBallYLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
+            lowerBallXLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
+            lowerBallYLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
+            upperBallMassValue.setText("" + ThreadLocalRandom.current().nextInt(5, 100));
+            lowerBallMassValue.setText("" + ThreadLocalRandom.current().nextInt(5, 100));
+            gravityTextField.setText(("" + ThreadLocalRandom.current().nextDouble(0.5, 10)).substring(0, 4));
+        });
+        
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -57,14 +73,13 @@ public class UI extends Application {
                     && lowerBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
                     && lowerBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
                     && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                    && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[1-9]")) {
+                    && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[0-9]")) {
                     
                     Drawing dr = new Drawing();
                     Ball upperBall = new Ball(Integer.parseInt(upperBallMassValue.getCharacters().toString()), Integer.parseInt(upperBallXLocationValue.getCharacters().toString()), Integer.parseInt(upperBallYLocationValue.getCharacters().toString()));
                     Ball lowerBall = new Ball(upperBall, Integer.parseInt(lowerBallMassValue.getCharacters().toString()), Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()), Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()));
                     dr.initializeLogic(upperBall, lowerBall, (Double.parseDouble(gravityTextField.getCharacters().toString()) / 10));
                     dr.start();
-                    stage.close();
                 } else {
                     badValues.setText("Enter valid values");;
                     upperBallXLocationValue.setText("");
@@ -95,13 +110,11 @@ public class UI extends Application {
         layout.add(lowerBallMassValue, 3, 2);
         layout.add(gravityTextField, 1, 3);
         layout.add(startButton, 1, 4);
+        layout.add(randomizeButton, 0, 4);
         layout.add(badValues, 1, 5, 2, 1);
             
         Scene scene = new Scene(layout, 740, 220);
         stage.setScene(scene);
         stage.show();
     } 
-    public void compile(String[] args) {
-        launch(UI.class);
-    }
 }

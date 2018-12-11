@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package doublependulum.logic;
 
-
+/**
+ * Calculate the next position of the balls based on their current attributes
+ */
 public class Logic {
     private final Ball lowerBall;
     private final Ball upperBall;
@@ -17,6 +14,12 @@ public class Logic {
     private double lowerAngleVel;
     private double lowerAngle;
     
+    /**
+     * Create the logic by which the balls move.
+     * @param upperBall the parent ball
+     * @param lowerBall the child ball
+     * @param g gravity of the simulation
+     */
     public Logic(Ball upperBall, Ball lowerBall, double g) {
         this.lowerBall = lowerBall;
         this.upperBall = upperBall;
@@ -45,6 +48,10 @@ public class Logic {
         this.lowerBall.setXY(x2, y2);
         
     }
+
+    /**
+     * Calculate the acceleration of the balls.
+     */
     public void calculateAcceleration() {
         double den = ((2 * upperBall.getMass()) + lowerBall.getMass() - (lowerBall.getMass() * (Math.cos(2 * (upperAngle - lowerAngle)))));
         

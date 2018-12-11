@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package doublependulum.graphics;
 
 import doublependulum.logic.Ball;
@@ -15,13 +10,18 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
+
 /**
- *
  * @author kevhann
+ * Draw the pendulum on a 2d canvas.
+ * A separate 2d canvas contains the trace of the lower ball.
  */
 public class Drawing {
     private Logic logic;
 
+    /**
+     * Start the simulation by creating the window
+     */
     public void start() {
         Stage pendulums = new Stage();
         final int leveys = 1000;
@@ -78,6 +78,14 @@ public class Drawing {
         }.start();
         pendulums.show();
     }
+
+    /**
+     * Draw the lines connecting the balls
+     * @param upper the parent ball 
+     * @param lower the child ball
+     * @param upperLine the line connecting the parent ball to the origin
+     * @param lowerLine the line connecting the child ball to the parent ball
+     */
     public void drawLines(Ball upper, Ball lower, Line upperLine, Line lowerLine) {
         upperLine.setEndX(logic.getUpperBall().getXlocation()  + logic.getUpperBall().getMass() / 2);
         upperLine.setEndY(logic.getUpperBall().getYlocation() + logic.getUpperBall().getMass() / 2);
@@ -88,7 +96,15 @@ public class Drawing {
         lowerLine.setEndY(logic.getLowerBall().getYlocation() + logic.getLowerBall().getMass() / 2);
     }
     
+    /**
+     * Create an instance of logic from the given parameters. This is the logic that runs the simulation.
+     * Place the balls on their starting positions.
+     * @param upper the parent ball
+     * @param lower the child ball
+     * @param gravity the gravity of the simulation
+     */
     public void initializeLogic(Ball upper, Ball lower, double gravity) {
         this.logic = new Logic(upper, lower, gravity);
+        logic.setBalls(upper.calculateStartingAngle(), lower.calculateStartingAngle(upper));
     }
 }
