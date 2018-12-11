@@ -13,4 +13,6 @@
 | 26.11 | 2    | Käyttöliittymän lisäystä + bugien korjausta | 
 | 27.11 | 3    | Käyttöliittymä valmiiksi, testikattavuutta, checkstyle korjauksia | 
 | 28.11 | 3.5  | Viikon 5 asioita, jäljen lisäys, toiminnallisuuden & tarkkuuden parantamista |
-| yht   | 30.5   | | 
+| 10.12 | 2    | Korjailua ja satunnaisuuden lisäys |
+| 11.12 | 3    | Toiminnan siistiminen ja javadocin lisäys |
+| yht   | 35.5   | | 
