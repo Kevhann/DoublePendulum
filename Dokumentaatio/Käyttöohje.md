@@ -1,6 +1,6 @@
 ﻿# Käyttöohje kaksoisheilurille
 
-[Lataa ohjelma tästä](Linkki)
+[Lataa ohjelma tästä](https://github.com/Kevhann/ot-harjoitusyto/releases/tag/viikko7)
 
 ## Ohjelman käynnistäminen
 
