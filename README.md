@@ -7,7 +7,7 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 
 [Viikko 5](https://github.com/Kevhann/ot-harjoitusyto/releases/tag/viikko5)
 
-[Viikko 7](linkki)
+[Viikko 7](https://github.com/Kevhann/ot-harjoitusyto/releases/tag/viikko7)
 
 ## Dokumentaatio
 [Arkkitehtuurikuvaus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
