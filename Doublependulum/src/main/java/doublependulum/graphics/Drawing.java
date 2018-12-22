@@ -48,7 +48,6 @@ public class Drawing {
         GraphicsContext drawer = drawingTable.getGraphicsContext2D();
         GraphicsContext shadowDrawer = shadowTable.getGraphicsContext2D();
         shadowDrawer.setFill(Color.BLACK);
-        drawer.setFill(Color.WHITE);
         drawer.clearRect(0, 0, leveys, korkeus);
         drawer.translate(xoffset, yoffset);
         shadowDrawer.translate(xoffset, yoffset);
@@ -61,7 +60,6 @@ public class Drawing {
                 if ((currentNanoTime - prevTime) < sleepNanoseconds) {
                     return;
                 }
-                drawer.setFill(Color.WHITE);
                 drawer.clearRect(-xoffset, -yoffset, leveys, korkeus);
                 
                 drawLines(logic.getUpperBall(), logic.getLowerBall(), upperLine, lowerLine);

@@ -1,4 +1,4 @@
-# Doublependulum
+﻿# Doublependulum
 Tarkoituksena mallintaa kahta toisissaan kiinni olevaa heiluria. 
 Kaksoisheiluri on esimerkki ns. kaaottisesta systeemistä, jossa pienet
 muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
@@ -6,6 +6,8 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 ## Releaset
 
 [Viikko 5](https://github.com/Kevhann/ot-harjoitusyto/releases/tag/viikko5)
+
+[Viikko 7](linkki)
 
 ## Dokumentaatio
 [Arkkitehtuurikuvaus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
@@ -16,6 +18,14 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 
 ## Komentorivitoiminnot
 
-Testaus suoritetaan komennolla: mvn test
+Testaus suoritetaan komennolla
 
-Testikattavuusraportti luodann komennolla: mvn test jacoco:report
+```
+mvn test
+```
+
+Testikattavuusraportti luodann komennolla
+
+```
+mvn test jacoco:report
+```

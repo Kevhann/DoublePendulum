@@ -21,10 +21,12 @@ public class UI extends Application {
 
     public UI() {
     }
+    
     /**
-    * Create the user interface window for setting the parameters for the simulation.
-    * Launch the simulation when attributes are within restrictions.
-    */
+     * Create the user interface window for setting the parameters for the
+     * simulation. Launch the simulation when attributes are within
+     * restrictions.
+     */
     public void start(Stage stage) throws Exception {
         stage.setTitle("Doublependulum");
         Label upperBall = new Label("Upper ball parameters");
@@ -49,10 +51,10 @@ public class UI extends Application {
         upperBallMassValue.setPromptText("1 - 99");
         lowerBallMassValue.setPromptText("1 - 99");
         gravityTextField.setPromptText("0.01 - 9.99");
-        
+
         Button startButton = new Button("Start");
         Button randomizeButton = new Button("Randomize!");
-        
+
         randomizeButton.setOnAction(s -> {
             upperBallXLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
             upperBallXLocationValue.setText("" + ThreadLocalRandom.current().nextInt(-299, 300));
@@ -63,25 +65,25 @@ public class UI extends Application {
             lowerBallMassValue.setText("" + ThreadLocalRandom.current().nextInt(5, 100));
             gravityTextField.setText(("" + ThreadLocalRandom.current().nextDouble(0.5, 10)).substring(0, 4));
         });
-        
+
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                if (upperBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
-                    && upperBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
-                    && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                    && lowerBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
-                    && lowerBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}") 
-                    && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?") 
-                    && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[0-9]")) {
-                    
+                if (upperBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}")
+                        && upperBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}")
+                        && upperBallMassValue.getCharacters().toString().matches("[1-9][0-9]?")
+                        && lowerBallXLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}")
+                        && lowerBallYLocationValue.getCharacters().toString().matches("-?[1,2]?[0-9]{1,2}")
+                        && lowerBallMassValue.getCharacters().toString().matches("[1-9][0-9]?")
+                        && gravityTextField.getCharacters().toString().matches("[0-9]?.?[0-9]?[0-9]")) {
+
                     Drawing dr = new Drawing();
                     Ball upperBall = new Ball(Integer.parseInt(upperBallMassValue.getCharacters().toString()), Integer.parseInt(upperBallXLocationValue.getCharacters().toString()), Integer.parseInt(upperBallYLocationValue.getCharacters().toString()));
                     Ball lowerBall = new Ball(upperBall, Integer.parseInt(lowerBallMassValue.getCharacters().toString()), Integer.parseInt(lowerBallXLocationValue.getCharacters().toString()), Integer.parseInt(lowerBallYLocationValue.getCharacters().toString()));
                     dr.initializeLogic(upperBall, lowerBall, (Double.parseDouble(gravityTextField.getCharacters().toString()) / 10));
                     dr.start();
                 } else {
-                    badValues.setText("Enter valid values");;
+                    badValues.setText("Enter valid values");
                     upperBallXLocationValue.setText("");
                     upperBallYLocationValue.setText("");
                     upperBallMassValue.setText("");
@@ -112,9 +114,9 @@ public class UI extends Application {
         layout.add(startButton, 1, 4);
         layout.add(randomizeButton, 0, 4);
         layout.add(badValues, 1, 5, 2, 1);
-            
+
         Scene scene = new Scene(layout, 740, 220);
         stage.setScene(scene);
         stage.show();
-    } 
+    }
 }
