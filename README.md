@@ -10,6 +10,8 @@ muutokset alkuasetelmissa luovat arvaamattomia seurauksia.
 [Viikko 7](https://github.com/Kevhann/ot-harjoitusyto/releases/tag/viikko7)
 
 ## Dokumentaatio
+[Käyttöohje](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+
 [Arkkitehtuurikuvaus](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Arkkitehtuurikuvaus.md)
 
 [Työaikakirjanpito](https://github.com/Kevhann/ot-harjoitusyto/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
